@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AsyncExample</string>
+    <string name="go_to_async_activity_example">Go to async activity example</string>
+</resources>
