@@ -10,5 +10,12 @@ public class ThreadExample extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thread_example);
+
+        new Thread(new Runnable () {
+           @Override
+            public void run() {
+
+           }
+        }).start();
     }
 }
