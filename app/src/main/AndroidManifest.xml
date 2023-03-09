@@ -12,6 +12,13 @@
         android:theme="@style/Theme.AsyncExample"
         tools:targetApi="31">
         <activity
+            android:name=".ThreadExample"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".AsyncTaskExample"
             android:exported="false">
             <meta-data
