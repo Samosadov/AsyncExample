@@ -13,11 +13,12 @@ public class AsyncTaskExample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_async_task_example);
 
-        MyAsyncTask myAsyncTask = new MyAsyncTask();
-        myAsyncTask.execute("I will destroy you!");
+//        MyAsyncTask myAsyncTask = new MyAsyncTask();
+//        myAsyncTask.execute("I will destroy you!");
     }
 }
 
+/*
 class MyAsyncTask extends AsyncTask<String, Integer, Integer> {
     @Override
     protected void onPostExecute(Integer integer) {
@@ -43,4 +44,4 @@ class MyAsyncTask extends AsyncTask<String, Integer, Integer> {
         cancel();
         return result;
     }
-}
+}*/
