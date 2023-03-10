@@ -10,7 +10,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 public class ThreadExample extends AppCompatActivity {
+
+    ExecutorService service = Executors.newFixedThreadPool(3);
 
     int mCounter = 0;
 
@@ -32,7 +39,7 @@ public class ThreadExample extends AppCompatActivity {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                long endTime = System.currentTimeMillis() + 20000;
+                long endTime = System.currentTimeMillis() + 2000;
                 while (System.currentTimeMillis() < endTime) {
                     synchronized(this) {
                         try {
@@ -48,8 +55,17 @@ public class ThreadExample extends AppCompatActivity {
 
             }
         };
-        Thread thread = new Thread(runnable);
-        thread.start();
+//        Thread thread = new Thread(runnable);
+//        thread.start();
+        Future future = service.submit(runnable);
+
+        try {
+            future.get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
